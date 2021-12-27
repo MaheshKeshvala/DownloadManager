@@ -18,14 +18,14 @@ import kotlinx.android.synthetic.main.activity_main.*
 import java.io.File
 
 private val url =
-    "https://d3i0sngc65p0xs.cloudfront.net/audio/1639377784992_photo-1639377784981.mp3"
+    "Your file url"
 
 private val url2 =
-    "https://d3i0sngc65p0xs.cloudfront.net/audio/1639377784992_photo-1639377784981.mp3"
+    "Your file url"
 private var url4 =
-    "https://d3i0sngc65p0xs.cloudfront.net/audio/1639377784992_photo-1639377784981.mp3"
+    "Your file url"
 private var url5 =
-    "https://d3i0sngc65p0xs.cloudfront.net/audio/1639377784992_photo-1639377784981.mp3"
+    "Your file url"
 
 
 class MainActivity : AppCompatActivity() {
@@ -91,7 +91,7 @@ class MainActivity : AppCompatActivity() {
         progressDialog.progress = 0
         progressDialog.show()
         DownloadPush.newRequestToDownload(
-            "https://d3i0sngc65p0xs.cloudfront.net/audio/1639377784992_photo-1639377784981.mp3",
+            url,
             "/myTestApp"
         )
             .listener(object : DownloadListener() {
@@ -150,7 +150,7 @@ class MainActivity : AppCompatActivity() {
     ) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         when (requestCode) {
-            1 -> if (grantResults.size > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+            1 -> if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 downloadList()
             } else {
                 Toast.makeText(this, "Permission not granted.", Toast.LENGTH_SHORT).show()
