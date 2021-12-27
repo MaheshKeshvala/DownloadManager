@@ -30,7 +30,7 @@ but before that you need to ask for the file access permission
                 )
             } 
 ```
-Put below code into your permission result override method to handle the library result:
+Put below code into your permission result override method to handle the permission:
 ```
    override fun onRequestPermissionsResult(
         requestCode: Int,
@@ -51,6 +51,16 @@ Put below code into your permission result override method to handle the library
 Put the below code to start your downloading, you have multiple options to download.
 single file download or multiple files download
 ```
+//First step is that you need to initialize the Download Configurations for the downloading task
+put below code into your oncreate() or onCreateView() block to intialize
+
+ DownloadConfig.newBuilder()
+            //Optional,set the maximum number of tasks to run, default 3.
+            .setMaxRunningTaskNum(2)
+            //Optional,set the minimum available storage space size for downloading to avoid insufficient storage space during downloading, default is 4kb.
+            .setMinUsableStorageSpace(4 * 1024L)
+            .build()
+
 private val url =
     "Your file url"
 private var url1 =
