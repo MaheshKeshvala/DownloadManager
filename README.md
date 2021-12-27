@@ -4,7 +4,7 @@ DownloadManager is the manage all types of the download task, it support latest 
 
 ## Library Setup
 
-Use the below gradle dependency for the implementation of the document picker library.
+Use the below gradle dependency for the implementation of the download manager library.
 
 Add the dependency into you app level gradle file(build.gradle):
 
@@ -15,7 +15,7 @@ Add the dependency into you app level gradle file(build.gradle):
 ## Usage
 
 Add Below code is for the download task that you want single download or multiple.
-but before that user you need to ask for the file access permission
+but before that you need to ask for the file access permission
 ```
 // Rquest permission for the file access to create a folder into the storage
  if (ContextCompat.checkSelfPermission(
